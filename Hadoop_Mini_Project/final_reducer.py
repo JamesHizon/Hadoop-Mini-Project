@@ -32,7 +32,7 @@ for line in sys.stdin:
     # I may need to edit code so that I instead have other three values vs. a values_arr.
     line = line.strip()
     # print(line)
-    vin_number, values = line.split('\t')  # TODO: Debug --> ValueError: too many values to unpack.
+    vin_number, values = line.split('\t')
     # List comprehension to remove unnecessary characters and extract desired values.
     values_list = [val.replace("'", "").replace("(", "").replace(")", "").replace(" ", "") for val in values.split(",")]
 
