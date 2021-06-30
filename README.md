@@ -9,6 +9,7 @@ Given that there were missing values (make and year) for a given record when the
 2. ```final_reducer.py``` - Creates master Python dictionary used to keep track of records with incident_type "I" to populate make and year. We filter through incident_type "A" in order to update and automatically increment the "accident_count" by 1 based on occurrence.
 3. ```final_mapper2.py``` - Map out the make and year as key, and accident_count as a value.
 4. ```final_reducer2.py``` - Aggregate (reduce) and collect final count for every make and year combination.
+5. ```Hadoop_MP_CLI.txt``` - All of the messages from using terminal to execute bash script and read the output text file.
 
 ### How to test Python script using Python 3
 
