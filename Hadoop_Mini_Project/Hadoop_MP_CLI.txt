@@ -1,3 +1,69 @@
+(base) jameshizon@Jamess-MBP ~ %  cd /usr/local/opt/hadoop
+(base) jameshizon@Jamess-MBP hadoop % ls
+INSTALL_RECEIPT.json	NOTICE.txt		libexec
+LICENSE-binary		README.txt		sbin
+LICENSE.txt		bin
+(base) jameshizon@Jamess-MBP hadoop % cd sbin
+(base) jameshizon@Jamess-MBP sbin % ls
+FederationStateStore	refresh-namenodes.sh	stop-balancer.sh
+distribute-exclude.sh	start-all.sh		stop-dfs.sh
+hadoop-daemon.sh	start-balancer.sh	stop-secure-dns.sh
+hadoop-daemons.sh	start-dfs.sh		stop-yarn.sh
+httpfs.sh		start-secure-dns.sh	workers.sh
+kms.sh			start-yarn.sh		yarn-daemon.sh
+mr-jobhistory-daemon.sh	stop-all.sh		yarn-daemons.sh
+(base) jameshizon@Jamess-MBP sbin % ./start-all.sh
+WARNING: Attempting to start all Apache Hadoop daemons as jameshizon in 10 seconds.
+WARNING: This is not a recommended production deployment configuration.
+WARNING: Use CTRL-C to abort.
+Starting namenodes on [localhost]
+Starting datanodes
+Starting secondary namenodes [Jamess-MBP.hitronhub.home]
+2021-07-05 21:20:03,529 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Starting resourcemanager
+Starting nodemanagers
+(base) jameshizon@Jamess-MBP sbin % jps
+16369 Jps
+16305 NodeManager
+15875 DataNode
+14104
+16011 SecondaryNameNode
+16205 ResourceManager
+
+(venv) (base) jameshizon@Jamess-MBP Hadoop_Mini_Project % ./stop-all.sh
+(venv) (base) jameshizon@Jamess-MBP Hadoop_Mini_Project % hadoop namenode -format
+(venv) (base) jameshizon@Jamess-MBP Hadoop_Mini_Project % ./start-all.sh
+
+(base) jameshizon@Jamess-MBP sbin % cd ..
+(base) jameshizon@Jamess-MBP hadoop % bin
+zsh: command not found: bin
+(base) jameshizon@Jamess-MBP hadoop % ls
+INSTALL_RECEIPT.json	NOTICE.txt		libexec
+LICENSE-binary		README.txt		sbin
+LICENSE.txt		bin
+(base) jameshizon@Jamess-MBP hadoop % cd bin
+(base) jameshizon@Jamess-MBP bin % ls
+container-executor	mapred			yarn
+hadoop			oom-listener
+hdfs			test-container-executor
+(base) jameshizon@Jamess-MBP bin % hadoop fs -ls
+2021-07-05 21:41:10,664 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+ls: `.': No such file or directory
+(base) jameshizon@Jamess-MBP bin % hadoop fs -ls /
+2021-07-05 21:41:25,878 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Found 1 items
+drwx------   - jameshizon supergroup          0 2021-07-05 21:38 /tmp
+(base) jameshizon@Jamess-MBP bin % hadoop fs -mkdir /test_directory/
+2021-07-05 21:42:50,774 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+(base) jameshizon@Jamess-MBP bin % hadoop fs -ls /
+2021-07-05 21:42:55,952 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Found 2 items
+drwxr-xr-x   - jameshizon supergroup          0 2021-07-05 21:42 /test_directory
+drwx------   - jameshizon supergroup          0 2021-07-05 21:38 /tmp
+(base) jameshizon@Jamess-MBP bin % hadoop fs -copyFromLocal /Users/jameshizon/PycharmProjects/MiniProjects/Hadoop_Mini_Project /test_directory/
+2021-07-05 21:43:53,607 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+(base) jameshizon@Jamess-MBP bin %
+
 (venv) (base) jameshizon@Jamess-MBP Hadoop_Mini_Project % bash auto_report.sh
 2021-06-30 15:52:35,676 WARN streaming.StreamJob: -file option is deprecated, please use generic option -files instead.
 2021-06-30 15:52:35,769 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
